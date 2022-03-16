@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  adminer:
+    image: michalhosna/adminer
+    depends_on:
+      - postgres
+    environment:
+      ADMINER_DB: nest
+      ADMINER_DRIVER: pgsql
+      ADMINER_PASSWORD: pass
+      ADMINER_SERVER: postgres
+      ADMINER_USERNAME: user
+      ADMINER_AUTOLOGIN: 1
+      ADMINER_NAME: Nest DB
+    ports:
+      - 8080:8080
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: nest
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+    ports:
+      - 5432:5432
