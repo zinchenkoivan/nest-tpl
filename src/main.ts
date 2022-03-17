@@ -12,14 +12,13 @@ async function bootstrap() {
     exclude: ['healthz'],
   });
 
-  // const swaggerConfig = new DocumentBuilder()
-  //   .setTitle('Cats example')
-  //   .setDescription('The cats API description')
-  //   .setVersion('1.0')
-  //   .addTag('cats')
-  //   .build();
-  // const document = SwaggerModule.createDocument(app, swaggerConfig);
-  // SwaggerModule.setup('api', app, document);
+  const swaggerConfig = new DocumentBuilder()
+    .setTitle(config.swagger.title)
+    .setDescription(config.swagger.description)
+    .setVersion(config.version)
+    .build();
+  const document = SwaggerModule.createDocument(app, swaggerConfig);
+  SwaggerModule.setup('api/docs', app, document);
 
   await app.listen(config.port);
 }

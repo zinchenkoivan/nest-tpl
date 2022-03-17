@@ -19,4 +19,9 @@ export default registerAs('app', () => ({
     },
     entities: [],
   },
+
+  swagger: {
+    title: 'Nest example',
+    description: 'Nest API description',
+  }
 }));
