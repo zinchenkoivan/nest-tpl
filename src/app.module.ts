@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { HealthzModule } from './healthz/healthz.module';
-import { UsersModule } from './users/users.module';
+import { HealthzModule } from './modules/healthz/healthz.module';
+import { UsersModule } from './modules/users/users.module';
 
 import appConfig from './config/app.config';
 
